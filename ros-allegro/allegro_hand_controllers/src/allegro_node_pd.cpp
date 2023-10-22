@@ -158,11 +158,11 @@ void AllegroNodePD::computeDesiredTorque() {
       // Control joint positions: compute the desired torques (PD control).
       double error;
       for (int i = 0; i < DOF_JOINTS; i++) {
-//        error = desired_joint_state.position[i] - current_position_filtered[i];
-        error = desired_joint_state.position[i] - current_position[i];
+        error = desired_joint_state.position[i] - current_position_filtered[i];
+//        error = desired_joint_state.position[i] - current_position[i];
         desired_torque[i] = 1.0/canDevice->torqueConversion() *
                 (k_p[i] * error - k_d[i] * current_velocity[i]);
-        desired_torque[i] = max(min(desired_torque[i], 0.5), -0.5);
+        desired_torque[i] = max(min(desired_torque[i], 0.7), -0.7);
       }
     } else if (desired_joint_state.effort.size() > 0) {
       // Control joint torques: set desired torques as the value stored in the
