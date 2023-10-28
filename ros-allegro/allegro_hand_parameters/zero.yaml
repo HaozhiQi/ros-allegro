@@ -8,6 +8,25 @@ hand_info:
  robot_name: 'Allegro Hand'
  manufacturer: 'Wonikrobotics Co. Ltd.'
  origin: 'Seoul, South Korea'
- serial: 'SAH040A080R'
+ serial: 'SAH01020006'
  version: 4.0
  input_voltage: 12
+
+zero:
+ encoder_offset:
+  j00: 0
+  j01: -0.01
+  j02: 0.01
+  j03: -0.03
+  j10: -0.017
+  j11: -0.005
+  j12: 0
+  j13: -0.03
+  j20: 0.0  # ring bottom
+  j21: 0
+  j22: -0.01
+  j23: -0.035
+  j30: 0.02
+  j31: -0.02
+  j32: 0.02
+  j33: 0

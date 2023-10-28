@@ -89,7 +89,7 @@ private:
 
     double _pwm_max_global;                 ///< global max value of PWM command is limited by the input voltage
     double _pwm_max[DOF_JOINTS];            ///< max value of PWM command of each joint
-    int    _encoder_offset[DOF_JOINTS];     ///< encoder offset
+    double _encoder_offset[DOF_JOINTS];     ///< encoder offset
     int    _encoder_direction[DOF_JOINTS];  ///< encoder direction
     int    _motor_direction[DOF_JOINTS];    ///< motor direction
 

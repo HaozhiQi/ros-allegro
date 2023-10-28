@@ -309,8 +309,57 @@ void AllegroHandDrv::_parseMessage(int id, int len, unsigned char* data)
             _pwm_max[eJOINTNAME_THUMB_1] = min(_pwm_max_global, PWM_LIMIT_THUMB_NEAR);
             _pwm_max[eJOINTNAME_THUMB_2] = min(_pwm_max_global, PWM_LIMIT_THUMB_MIDDLE);
             _pwm_max[eJOINTNAME_THUMB_3] = min(_pwm_max_global, PWM_LIMIT_THUMB_FAR);
-            
 
+            ros::param::get("~zero/encoder_offset/j00", _encoder_offset[eJOINTNAME_INDEX_0]);
+            ros::param::get("~zero/encoder_offset/j01", _encoder_offset[eJOINTNAME_INDEX_1]);
+            ros::param::get("~zero/encoder_offset/j02", _encoder_offset[eJOINTNAME_INDEX_2]);
+            ros::param::get("~zero/encoder_offset/j03", _encoder_offset[eJOINTNAME_INDEX_3]);
+            ros::param::get("~zero/encoder_offset/j10", _encoder_offset[eJOINTNAME_MIDDLE_0]);
+            ros::param::get("~zero/encoder_offset/j11", _encoder_offset[eJOINTNAME_MIDDLE_1]);
+            ros::param::get("~zero/encoder_offset/j12", _encoder_offset[eJOINTNAME_MIDDLE_2]);
+            ros::param::get("~zero/encoder_offset/j13", _encoder_offset[eJOINTNAME_MIDDLE_3]);
+            ros::param::get("~zero/encoder_offset/j20", _encoder_offset[eJOINTNAME_PINKY_0]);
+            ros::param::get("~zero/encoder_offset/j21", _encoder_offset[eJOINTNAME_PINKY_1]);
+            ros::param::get("~zero/encoder_offset/j22", _encoder_offset[eJOINTNAME_PINKY_2]);
+            ros::param::get("~zero/encoder_offset/j23", _encoder_offset[eJOINTNAME_PINKY_3]);
+            ros::param::get("~zero/encoder_offset/j30", _encoder_offset[eJOINTNAME_THUMB_0]);
+            ros::param::get("~zero/encoder_offset/j31", _encoder_offset[eJOINTNAME_THUMB_1]);
+            ros::param::get("~zero/encoder_offset/j32", _encoder_offset[eJOINTNAME_THUMB_2]);
+            ros::param::get("~zero/encoder_offset/j33", _encoder_offset[eJOINTNAME_THUMB_3]);
+
+            ros::param::get("~zero/encoder_direction/j00", _encoder_direction[eJOINTNAME_INDEX_0]);
+            ros::param::get("~zero/encoder_direction/j01", _encoder_direction[eJOINTNAME_INDEX_1]);
+            ros::param::get("~zero/encoder_direction/j02", _encoder_direction[eJOINTNAME_INDEX_2]);
+            ros::param::get("~zero/encoder_direction/j03", _encoder_direction[eJOINTNAME_INDEX_3]);
+            ros::param::get("~zero/encoder_direction/j10", _encoder_direction[eJOINTNAME_MIDDLE_0]);
+            ros::param::get("~zero/encoder_direction/j11", _encoder_direction[eJOINTNAME_MIDDLE_1]);
+            ros::param::get("~zero/encoder_direction/j12", _encoder_direction[eJOINTNAME_MIDDLE_2]);
+            ros::param::get("~zero/encoder_direction/j13", _encoder_direction[eJOINTNAME_MIDDLE_3]);
+            ros::param::get("~zero/encoder_direction/j20", _encoder_direction[eJOINTNAME_PINKY_0]);
+            ros::param::get("~zero/encoder_direction/j21", _encoder_direction[eJOINTNAME_PINKY_1]);
+            ros::param::get("~zero/encoder_direction/j22", _encoder_direction[eJOINTNAME_PINKY_2]);
+            ros::param::get("~zero/encoder_direction/j23", _encoder_direction[eJOINTNAME_PINKY_3]);
+            ros::param::get("~zero/encoder_direction/j30", _encoder_direction[eJOINTNAME_THUMB_0]);
+            ros::param::get("~zero/encoder_direction/j31", _encoder_direction[eJOINTNAME_THUMB_1]);
+            ros::param::get("~zero/encoder_direction/j32", _encoder_direction[eJOINTNAME_THUMB_2]);
+            ros::param::get("~zero/encoder_direction/j33", _encoder_direction[eJOINTNAME_THUMB_3]);
+
+            ros::param::get("~zero/motor_direction/j00", _motor_direction[eJOINTNAME_INDEX_0]);
+            ros::param::get("~zero/motor_direction/j01", _motor_direction[eJOINTNAME_INDEX_1]);
+            ros::param::get("~zero/motor_direction/j02", _motor_direction[eJOINTNAME_INDEX_2]);
+            ros::param::get("~zero/motor_direction/j03", _motor_direction[eJOINTNAME_INDEX_3]);
+            ros::param::get("~zero/motor_direction/j10", _motor_direction[eJOINTNAME_MIDDLE_0]);
+            ros::param::get("~zero/motor_direction/j11", _motor_direction[eJOINTNAME_MIDDLE_1]);
+            ros::param::get("~zero/motor_direction/j12", _motor_direction[eJOINTNAME_MIDDLE_2]);
+            ros::param::get("~zero/motor_direction/j13", _motor_direction[eJOINTNAME_MIDDLE_3]);
+            ros::param::get("~zero/motor_direction/j20", _motor_direction[eJOINTNAME_PINKY_0]);
+            ros::param::get("~zero/motor_direction/j21", _motor_direction[eJOINTNAME_PINKY_1]);
+            ros::param::get("~zero/motor_direction/j22", _motor_direction[eJOINTNAME_PINKY_2]);
+            ros::param::get("~zero/motor_direction/j23", _motor_direction[eJOINTNAME_PINKY_3]);
+            ros::param::get("~zero/motor_direction/j30", _motor_direction[eJOINTNAME_THUMB_0]);
+            ros::param::get("~zero/motor_direction/j31", _motor_direction[eJOINTNAME_THUMB_1]);
+            ros::param::get("~zero/motor_direction/j32", _motor_direction[eJOINTNAME_THUMB_2]);
+            ros::param::get("~zero/motor_direction/j33", _motor_direction[eJOINTNAME_THUMB_3]);
         }
             break;
         case ID_RTR_SERIAL:
@@ -332,11 +381,10 @@ void AllegroHandDrv::_parseMessage(int id, int len, unsigned char* data)
             tmppos[3] = (short) (data[6] | (data[7] << 8));
 
             lIndexBase = findex * 4;
-
-            _curr_position[lIndexBase+0] = (double)(tmppos[0]) * ( 333.3 / 65536.0 ) * ( M_PI/180.0);
-            _curr_position[lIndexBase+1] = (double)(tmppos[1]) * ( 333.3 / 65536.0 ) * ( M_PI/180.0);
-            _curr_position[lIndexBase+2] = (double)(tmppos[2]) * ( 333.3 / 65536.0 ) * ( M_PI/180.0);
-            _curr_position[lIndexBase+3] = (double)(tmppos[3]) * ( 333.3 / 65536.0 ) * ( M_PI/180.0);
+            _curr_position[lIndexBase+0] = (double)(tmppos[0]) * ( 333.3 / 65536.0 ) * ( M_PI/180.0) - _encoder_offset[lIndexBase+0];
+            _curr_position[lIndexBase+1] = (double)(tmppos[1]) * ( 333.3 / 65536.0 ) * ( M_PI/180.0) - _encoder_offset[lIndexBase+1];
+            _curr_position[lIndexBase+2] = (double)(tmppos[2]) * ( 333.3 / 65536.0 ) * ( M_PI/180.0) - _encoder_offset[lIndexBase+2];
+            _curr_position[lIndexBase+3] = (double)(tmppos[3]) * ( 333.3 / 65536.0 ) * ( M_PI/180.0) - _encoder_offset[lIndexBase+3];
 
             _curr_position_get |= (0x01 << (findex));
         }
